@@ -17,7 +17,7 @@ export function LanguageDropdown() {
     const { locale, setLocale, t } = useI18n();
 
     return (
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
             <DropdownMenuTrigger
                 aria-label={t.header.languageLabel}
                 className="flex cursor-pointer items-center gap-[6px] text-sm font-medium leading-5 text-foreground transition-colors hover:text-accent focus:outline-none"

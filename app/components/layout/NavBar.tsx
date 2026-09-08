@@ -17,7 +17,7 @@ const NavBar = () => {
     const { t } = useI18n();
 
     return (
-        <nav aria-label={t.header.menuTitle} className="hidden lg:block">
+        <nav aria-label={t.header.navLabel} className="hidden lg:block">
             <NavigationMenu viewport={false}>
                 <NavigationMenuList className="gap-[14px]">
                     {NAV_SECTION_IDS.map((sectionId) => (

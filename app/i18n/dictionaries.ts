@@ -2,7 +2,7 @@ import { en } from './locales/en';
 import { pt } from './locales/pt';
 import type { Dictionary, Locale } from './types';
 
-export type { Dictionary, Locale, Segment, TimelineEntry } from './types';
+export type { Dictionary, Locale } from './types';
 
 /** Rótulo de cada idioma no seletor — sempre no próprio idioma. */
 export const LOCALE_NAMES: Record<Locale, string> = {

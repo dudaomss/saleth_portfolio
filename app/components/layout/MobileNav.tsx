@@ -46,7 +46,7 @@ const MobileNav = () => {
                     </SheetTitle>
                 </SheetHeader>
 
-                <nav aria-label={t.header.menuTitle}>
+                <nav aria-label={t.header.navLabel}>
                     <ul className="flex flex-col gap-5">
                         {NAV_SECTION_IDS.map((sectionId) => (
                             <li key={sectionId}>

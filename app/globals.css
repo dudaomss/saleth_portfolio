@@ -6,7 +6,7 @@
   --accent: #FFA8A8;
   --accent-foreground: #0D3938;
 
-  --card: #0D3938;
+  --card: #0A2C2B;
   --card-foreground: #FFFFFF;
   --popover: #0D3938;
   --popover-foreground: #FFFFFF;
@@ -137,3 +137,4 @@ html {
     transition-duration: 0.001ms !important;
   }
 }
+

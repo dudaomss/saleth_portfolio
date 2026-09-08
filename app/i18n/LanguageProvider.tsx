@@ -17,19 +17,10 @@ const readStoredLocale = (): Locale => {
         const stored = window.localStorage.getItem(STORAGE_KEY);
         return isLocale(stored) ? stored : DEFAULT_LOCALE;
     } catch {
-        // localStorage pode estar bloqueado (modo privado, cookies desativados).
         return DEFAULT_LOCALE;
     }
 };
 
-/**
- * Store externa mínima para o idioma.
- *
- * A preferência vive no localStorage, fora do React, então `useSyncExternalStore`
- * é o jeito certo de lê-la: na hidratação o React usa o snapshot do servidor
- * (idioma padrão, igual ao HTML entregue) e só depois troca para o valor salvo,
- * sem mismatch e sem `setState` dentro de efeito.
- */
 const localeStore = {
     current: typeof window === 'undefined' ? DEFAULT_LOCALE : readStoredLocale(),
     listeners: new Set<() => void>(),

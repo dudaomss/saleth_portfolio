@@ -1,12 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { CircleChevronUp, Github, Linkedin } from 'lucide-react';
+import { CircleChevronDown } from 'lucide-react';
 import heroPhoto from '@/public/images/hero.png';
 import { cn } from '@/lib/utils';
 import { SECTION_IDS, SOCIAL_LINKS } from '@/app/config/site';
+import { SOCIAL_ICONS } from '@/app/components/icons/brand';
 import { useI18n } from '@/app/i18n/LanguageProvider';
 import { useInView } from '@/app/hooks/useInView';
+import { EXTERNAL_LINK_PROPS } from '@/app/utils/externalLink';
 import { revealDelay } from '@/app/utils/reveal';
 import { scrollToSection } from '@/app/utils/scrollToSection';
 
@@ -50,24 +52,21 @@ const Hero = () => {
                         className="reveal flex items-center gap-5"
                         style={revealDelay(4)}
                     >
-                        <a
-                            href={SOCIAL_LINKS.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={t.hero.linkedin}
-                            className={socialLinkClassName}
-                        >
-                            <Linkedin className="size-8 lg:size-9" strokeWidth={1.5} />
-                        </a>
-                        <a
-                            href={SOCIAL_LINKS.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={t.hero.github}
-                            className={socialLinkClassName}
-                        >
-                            <Github className="size-8 lg:size-9" strokeWidth={1.5} />
-                        </a>
+                        {SOCIAL_LINKS.map(({ id, url }) => {
+                            const Icon = SOCIAL_ICONS[id];
+
+                            return (
+                                <a
+                                    key={id}
+                                    href={url}
+                                    {...EXTERNAL_LINK_PROPS}
+                                    aria-label={t.social[id]}
+                                    className={socialLinkClassName}
+                                >
+                                    <Icon className="size-8 lg:size-9" />
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -99,7 +98,7 @@ const Hero = () => {
                     aria-label={t.hero.scrollDown}
                     className="cursor-pointer text-foreground transition-colors hover:text-accent"
                 >
-                    <CircleChevronUp
+                    <CircleChevronDown
                         className="animate-bob size-10 lg:size-[45px]"
                         strokeWidth={1.5}
                     />

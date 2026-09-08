@@ -11,7 +11,8 @@ import MobileNav from './MobileNav';
 import { LanguageDropdown } from '../LanguageDropdown';
 
 const Header = () => {
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
+    const resumePath = RESUME_PATH[locale];
     const { ref, inView } = useInView<HTMLElement>({ threshold: 0 });
 
     return (
@@ -38,7 +39,7 @@ const Header = () => {
                     className="h-9 min-w-16 gap-0 px-2 py-1.5 font-medium"
                     asChild
                 >
-                    <a href={RESUME_PATH} download>
+                    <a href={resumePath} download={resumePath.slice(1)}>
                         <FileDown className="size-4" />
                         <span className="hidden px-1 sm:inline">{t.header.resume}</span>
                         <span className="px-1 sm:hidden">{t.header.resumeShort}</span>
