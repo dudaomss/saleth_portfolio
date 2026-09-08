@@ -2,7 +2,7 @@
 
 Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e experiência como **Front-end Developer**, com foco em **performance, código limpo e boas práticas de UI/UX**.
 
-🔗 Deploy: -  
+🔗 Deploy: https://eduardasaleth.com/
 📄 LinkedIn: (https://www.linkedin.com/in/eduarda-saleth-3a175621a/)
 
 ---
