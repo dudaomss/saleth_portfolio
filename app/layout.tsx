@@ -17,7 +17,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Eduarda Saleth",
-  description: "Portfolio de Eduarda Saleth",
+  description: "Portfólio de Eduarda Saleth, desenvolvedora Full Stack com mais de 4 anos de experiência em aplicações web com React, Next.js, TypeScript e C# .NET.",
 };
 
 export default function RootLayout({
